@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/398801547/Spark_Banking_App.iml" filepath="$PROJECT_DIR$/.idea/modules/398801547/Spark_Banking_App.iml" group="Spark_Banking_App" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app.iml" group="Spark Banking App/app" />
+    </modules>
+  </component>
+</project>

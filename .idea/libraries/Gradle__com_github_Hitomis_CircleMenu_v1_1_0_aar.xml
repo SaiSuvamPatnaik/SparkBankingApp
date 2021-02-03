@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.Hitomis:CircleMenu:v1.1.0@aar">
+    <CLASSES>
+      <root url="file://$APPLICATION_HOME_DIR$/plugins/gradle-java/caches/transforms-2/files-2.1/d5ef06a90dccfe1b16dcbf55f51d8481/jetified-CircleMenu-v1.1.0/AndroidManifest.xml" />
+      <root url="jar://$APPLICATION_HOME_DIR$/plugins/gradle-java/caches/transforms-2/files-2.1/d5ef06a90dccfe1b16dcbf55f51d8481/jetified-CircleMenu-v1.1.0/jars/classes.jar!/" />
+      <root url="file://$APPLICATION_HOME_DIR$/plugins/gradle-java/caches/transforms-2/files-2.1/d5ef06a90dccfe1b16dcbf55f51d8481/jetified-CircleMenu-v1.1.0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$APPLICATION_HOME_DIR$/plugins/gradle-java/caches/modules-2/files-2.1/com.github.Hitomis/CircleMenu/v1.1.0/bad464a180711b217a8af0cc9aa16e7e59dade54/CircleMenu-v1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
