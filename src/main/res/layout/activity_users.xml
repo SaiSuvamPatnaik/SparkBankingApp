@@ -16,7 +16,7 @@
         android:id="@+id/view"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-        android:background="@drawable/ic_wave1"
+        android:background="#ff8800"
         app:layout_constraintTop_toBottomOf="@+id/view2"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -24,10 +24,11 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="USERS"
         android:textColor="#ffffff"
-        android:textSize="40sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,15 +54,16 @@
 
     <ImageView
         android:id="@+id/next"
-        android:layout_width="51dp"
-        android:layout_height="54dp"
+        android:layout_width="47dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintHorizontal_bias="0.956"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.129"
-        app:srcCompat="@drawable/next" />
+        app:layout_constraintVertical_bias="0.041"
+        app:srcCompat="@drawable/history" />
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -122,14 +124,15 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.671" />
 
-                    <TextView
-                        android:id="@+id/textView6"
+                    <Button
+                        android:id="@+id/btn1"
+                        android:textColor="@drawable/text"
+                        android:background="@drawable/roundnew"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/money"
+
                         android:fontFamily="sans-serif-condensed-medium"
-                        android:text="1000"
-                        android:textColor="#000000"
+                        android:text="CLICK"
                         android:textSize="24sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -185,14 +188,15 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.671" />
 
-                    <TextView
-                        android:id="@+id/textView6"
+                    <Button
+                        android:id="@+id/btn2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/money"
+                        android:background="@drawable/roundnew"
                         android:fontFamily="sans-serif-condensed-medium"
-                        android:text="1000"
-                        android:textColor="#000000"
+                        android:text="CLICK"
+                        android:textColor="@drawable/text"
+
                         android:textSize="24sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -247,14 +251,15 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.671" />
 
-                    <TextView
-                        android:id="@+id/textView6"
+                    <Button
+                        android:id="@+id/btn3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/money"
+                        android:background="@drawable/roundnew"
                         android:fontFamily="sans-serif-condensed-medium"
-                        android:text="1000"
-                        android:textColor="#000000"
+                        android:text="CLICK"
+                        android:textColor="@drawable/text"
+
                         android:textSize="24sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -308,14 +313,15 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.671" />
 
-                    <TextView
-                        android:id="@+id/textView6"
+                    <Button
+                        android:id="@+id/btn4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/money"
+                        android:background="@drawable/roundnew"
                         android:fontFamily="sans-serif-condensed-medium"
-                        android:text="1000"
-                        android:textColor="#000000"
+                        android:text="CLICK"
+                        android:textColor="@drawable/text"
+
                         android:textSize="24sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -369,14 +375,15 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.671" />
 
-                    <TextView
-                        android:id="@+id/textView6"
+                    <Button
+                        android:id="@+id/btn5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/money"
+                        android:background="@drawable/roundnew"
                         android:fontFamily="sans-serif-condensed-medium"
-                        android:text="1000"
-                        android:textColor="#000000"
+                        android:text="CLICK"
+                        android:textColor="@drawable/text"
+
                         android:textSize="24sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -430,14 +437,15 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.671" />
 
-                    <TextView
-                        android:id="@+id/textView6"
+                    <Button
+                        android:id="@+id/btn6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/money"
+
+                        android:background="@drawable/roundnew"
                         android:fontFamily="sans-serif-condensed-medium"
-                        android:text="1000"
-                        android:textColor="#000000"
+                        android:text="CLICK"
+                        android:textColor="@drawable/text"
                         android:textSize="24sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -475,7 +483,7 @@
                         app:layout_constraintVertical_bias="0.235" />
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/textView55"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/call"
@@ -491,14 +499,15 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.671" />
 
-                    <TextView
-                        android:id="@+id/textView6"
+                    <Button
+                        android:id="@+id/btn7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/money"
+
+                        android:background="@drawable/roundnew"
                         android:fontFamily="sans-serif-condensed-medium"
-                        android:text="1000"
-                        android:textColor="#000000"
+                        android:text="CLICK"
+                        android:textColor="@drawable/text"
                         android:textSize="24sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -552,14 +561,15 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.671" />
 
-                    <TextView
-                        android:id="@+id/textView6"
+                    <Button
+                        android:id="@+id/btn8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/money"
+
+                        android:background="@drawable/roundnew"
                         android:fontFamily="sans-serif-condensed-medium"
-                        android:text="1000"
-                        android:textColor="#000000"
+                        android:text="CLICK"
+                        android:textColor="@drawable/text"
                         android:textSize="24sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"

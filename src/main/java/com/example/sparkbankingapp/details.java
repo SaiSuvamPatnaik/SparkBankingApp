@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,9 +32,13 @@ public class details extends AppCompatActivity {
     Uri imageuri,uri;
     private FirebaseDatabase Database;
     private DatabaseReference Ref;
-    Long data1,data2,data3;
-    Button pay,back;
-    String data4;
+    String data1,data2,data3,dataa;
+    Button pay;
+    ImageView back;
+    String data4,datadata,data;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("Users");
+    TextView refresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,20 +52,41 @@ public class details extends AppCompatActivity {
         img=findViewById(R.id.img);
         pay=findViewById(R.id.pay);
         back=findViewById(R.id.back);
+        refresh=findViewById(R.id.refresh);
+
+        data4 = (getIntent().getStringExtra("name"));
+        Database=FirebaseDatabase.getInstance();
+        Ref=Database.getReference("Users").child(data4);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(details.this,users.class);
-                intent.putExtra("data4",data4);
-                startActivity(intent);
+            Intent intent = new Intent(details.this,users.class);
+            startActivity(intent);
+
+            }
+        });
+        refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myRef.child(data4).child("Balance").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        dataa = dataSnapshot.getValue(String.class);
+                        balance.setText(String.valueOf(dataa));
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
             }
         });
 
-        data4 = (getIntent().getStringExtra("name"));
 
-        Database=FirebaseDatabase.getInstance();
-        Ref=Database.getReference("Users").child(data4);
+
+
 
         img.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,10 +115,12 @@ public class details extends AppCompatActivity {
 
             }
         });
+
+
         Ref.child("Balance").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                data1= Long.valueOf(String.valueOf(dataSnapshot.getValue(Long.class)));
+                data1=dataSnapshot.getValue(String.class);
                 balance.setText(String.valueOf(data1));
             }
 
@@ -104,7 +132,7 @@ public class details extends AppCompatActivity {
         Ref.child("Phone").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                data3= Long.valueOf(String.valueOf(dataSnapshot.getValue(Long.class)));
+                data3=dataSnapshot.getValue(String.class);
                 phone.setText(String.valueOf(data3));
             }
 
@@ -116,7 +144,7 @@ public class details extends AppCompatActivity {
         Ref.child("IFSC").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                data2= Long.valueOf(String.valueOf(dataSnapshot.getValue(Long.class)));
+                data2=dataSnapshot.getValue(String.class);
                 ifsc.setText(String.valueOf(data2));
             }
 

@@ -39,6 +39,9 @@ public class users extends AppCompatActivity {
         name8=findViewById(R.id.name8);
         next = findViewById(R.id.next);
 
+        String dataa = (getIntent().getStringExtra("name"));
+
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +51,7 @@ public class users extends AppCompatActivity {
             }
         });
 
-        data4 = (getIntent().getStringExtra("data4"));
+
 
         user1.setOnClickListener(new View.OnClickListener() {
             @Override

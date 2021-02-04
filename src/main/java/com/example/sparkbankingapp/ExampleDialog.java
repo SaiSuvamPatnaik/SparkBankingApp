@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,10 +26,9 @@ import java.sql.Ref;
 public class ExampleDialog extends AppCompatDialogFragment {
 
     EditText name;
-    String data4;
+    String data4,datadata,datadata1,datadata2;
     String id;
-    Long data;
-    Integer data1;
+    Integer data1,data2,sum;
 
     public ExampleDialog(String data4) {
         this.data4=data4;
@@ -55,9 +55,69 @@ public class ExampleDialog extends AppCompatDialogFragment {
                 String Amount=name1;
                 model obj = new model(Name,Amount);
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("PERSON");
+                final DatabaseReference myRef = database.getReference("PERSON");
+                FirebaseDatabase database2 = FirebaseDatabase.getInstance();
+                final DatabaseReference myRef2 = database2.getReference("Users");
                 id = myRef.push().getKey();
                 myRef.child("Sai Suvam").child(id).setValue(obj);
+                myRef.child("Sai Suvam").child(id).child("amount").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        datadata=dataSnapshot.getValue(String.class);
+                        FirebaseDatabase database1 = FirebaseDatabase.getInstance();
+                        final DatabaseReference myRef1 = database1.getReference("Changes");
+                        myRef1.child("change").setValue(String.valueOf(datadata));
+                        myRef1.child("change").addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                datadata1=dataSnapshot.getValue(String.class);
+                                data1=Integer.parseInt(datadata1);
+
+                                myRef2.child(data4).child("Balance").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                        datadata2=dataSnapshot.getValue(String.class);
+                                        data2=Integer.parseInt(datadata2);
+                                        sum=data1+data2;
+                                        myRef2.child(data4).child("Balance").setValue(String.valueOf(sum));
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                    }
+                                });
+
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+
+
+
+
+
+
+
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+
+
+
+
 
 
 

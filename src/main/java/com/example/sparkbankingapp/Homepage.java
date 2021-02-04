@@ -10,8 +10,16 @@ import androidx.core.content.ContextCompat;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
 
@@ -21,6 +29,11 @@ public class Homepage extends AppCompatActivity {
 
     CircleMenu crcl;
     ConstraintLayout cl;
+    TextView balance;
+    String data1;
+    TextView refresh;
+    private FirebaseDatabase Database;
+    private DatabaseReference Ref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +41,41 @@ public class Homepage extends AppCompatActivity {
 
         crcl = findViewById(R.id.crcl);
         cl = findViewById(R.id.cl);
+        balance = findViewById(R.id.balance);
+        refresh = findViewById(R.id.refresh);
+
+        Database= FirebaseDatabase.getInstance();
+        Ref=Database.getReference("Users").child("Sai Suvam");
+        Ref.child("Balance").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                data1=dataSnapshot.getValue(String.class);
+                balance.setText(String.valueOf(data1));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Ref.child("Balance").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        data1=dataSnapshot.getValue(String.class);
+                        balance.setText(String.valueOf(data1));
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+        });
 
         BiometricManager biometricManager = BiometricManager.from(this);
         switch (biometricManager.canAuthenticate()){
@@ -44,7 +92,7 @@ public class Homepage extends AppCompatActivity {
             case BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED:
 
                 break;
-        };
+        }
 
         Executor executor = ContextCompat.getMainExecutor(this);
         final BiometricPrompt biometricPrompt = new BiometricPrompt(Homepage.this, executor, new BiometricPrompt.AuthenticationCallback() {
@@ -91,5 +139,8 @@ public class Homepage extends AppCompatActivity {
                         }
                     }
                 });
+
+
+
     }
 }

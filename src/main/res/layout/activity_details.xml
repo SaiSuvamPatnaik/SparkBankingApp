@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".details">
 
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@drawable/back" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img"
         android:layout_width="243dp"
@@ -83,6 +95,23 @@
         app:layout_constraintVertical_bias="0.498" />
 
     <TextView
+        android:id="@+id/refresh"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="365dp"
+        android:background="@drawable/refresh1"
+        android:fontFamily="sans-serif-thin"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
+
+    <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -134,6 +163,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="180dp"
         android:layout_marginTop="363dp"
+        android:text="1000"
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -147,6 +177,7 @@
         android:id="@+id/pay"
         android:layout_width="184dp"
         android:layout_height="60dp"
+        android:layout_marginTop="70dp"
         android:background="@drawable/round_border2"
         android:elevation="60dp"
         android:text="PAY MONEY"
@@ -158,21 +189,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.879" />
-
-    <Button
-        android:id="@+id/back"
-        android:layout_width="184dp"
-        android:layout_height="60dp"
-        android:background="@drawable/round_border2"
-        android:elevation="60dp"
-        android:text="back"
-        android:textColor="@drawable/text"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
